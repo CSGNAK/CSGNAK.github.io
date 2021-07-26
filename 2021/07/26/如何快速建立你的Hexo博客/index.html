@@ -28,7 +28,7 @@
 <meta property="og:description" content="&amp;emsp;&amp;emsp;上学期的时候，请教了某学长在Windows上搭建了一个文件分享的网站。但是现在换了MacOS，Filezilla登录不上原有的网站。所以这个暑假打算利用github做一个简易的博客记录生活以及代码学习。目前没有购买域名，一方面是学生党预算有限，另一方面也是水平有限，需要不断学习。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-26T01:10:49.000Z">
-<meta property="article:modified_time" content="2021-07-26T02:03:37.803Z">
+<meta property="article:modified_time" content="2021-07-26T03:04:32.653Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="心得">
 <meta name="twitter:card" content="summary">
@@ -317,7 +317,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">478</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">919</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -452,21 +452,31 @@ height:50vh;
 <span id="more"></span>
 
 <h2 id="Hexo的下载与安装"><a href="#Hexo的下载与安装" class="headerlink" title="Hexo的下载与安装"></a>Hexo的下载与安装</h2><p>Hexo是一个基于Node.js生成的快速、简洁且高效的静态博客框架。在搭建Hexo时，如果有问题，可以选择删掉博客所在的文件夹——这可比重新找问题所在快多了😂</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js官网</a>上下载稳定版本的Node.js，并直接安装。在终端输入<code>node -v</code>和<code>npm -v</code>确定安装成功并查看版本。</p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>注意这里是全局安装，在终端输入：</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js官网</a>上下载稳定版本的Node.js，并直接安装。我的Mac用<code>brew install node  </code>会出现一些无法正常显示版本的问题。在终端输入<code>node -v</code>和<code>npm -v</code>确定安装成功并查看版本。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在全局安装Hexo，在终端输入：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
 
-<p>即可安装hexo。利用<code>hexo -v</code>进行检查</p>
+<p>即可安装hexo。利用<code>hexo -v</code>进行版本检查。</p>
 <h3 id="国内npm速度慢的情况"><a href="#国内npm速度慢的情况" class="headerlink" title="国内npm速度慢的情况"></a>国内npm速度慢的情况</h3><p>由于无法“科学”上网的情况，我们需要利用npm下载cnpm帮助我们快速获取资源。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
-<p>个人感觉cnpm的下载代码更加清楚。同样的安装Hexo：</p>
+<p>个人感觉cnpm的下载代码更加高效。同样的在全局安装Hexo：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <h2 id="Hexo的初始化与连接"><a href="#Hexo的初始化与连接" class="headerlink" title="Hexo的初始化与连接"></a>Hexo的初始化与连接</h2><h3 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h3><p>选中你期望写博客的文件夹。如果没有，可以利用<code>mkdir 文件名</code>新建所需的文件夹。从终端进入文件夹，输入：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init		#初始化</span><br></pre></td></tr></table></figure>
 
-<h2 id="Hexo的一些拓展功能"><a href="#Hexo的一些拓展功能" class="headerlink" title="Hexo的一些拓展功能"></a>Hexo的一些拓展功能</h2><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>在github上搜索hexo-theme，能搜到上千条内容。选中自己喜欢的主题并且下载到你期望写博客的文件夹。在_config.yml文件中找到theme，将初始化的主题landscape替换成你想要的即可。我的博客采用的是<a target="_blank" rel="noopener" href="https://github.com/fi3ework/hexo-theme-archer">这个模版</a>，感觉非常美观。</p>
+<p>Hexo会自动下载，之后我们要在github上建立一个放置网站的仓库。</p>
+<h3 id="建立github仓库"><a href="#建立github仓库" class="headerlink" title="建立github仓库"></a>建立github仓库</h3><p>如图所示，博客的仓库名称是你的github名称。</p>
+<h3 id="hexo与github仓库的连接"><a href="#hexo与github仓库的连接" class="headerlink" title="hexo与github仓库的连接"></a>hexo与github仓库的连接</h3><p>初始化之后，可以在你期望写博客的文件夹找到文件_config.yml文件。可以直接打开，也可以在终端通过<code>vim _config.yml</code>指令打开编辑。将文件拉到最后，修改# Deployment部分如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  branch: master</span><br><span class="line">  repo: https://github.com/yourgithubname/yourgithubname.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>如果用指令编辑，编辑后按<code>esc+:wq+Enter</code>强制退出。之后可以利用Hexo的常用指令进行编辑了。</p>
+<p>首先利用<code>hexo s</code>指令启动本地服务器，之后点击<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>进行本地化的查看。按<code>crtl+c</code>退出本地服务器。之后利用<code>hexo g</code>指令生成网站静态文件到默认设置的public文件夹。最后利用<code>hexo d</code>部署到设定的仓库。通过访问<a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://yourgithubname.github.io</a>就可以访问你的博客了。</p>
+<h3 id="Hexo的部分常用指令"><a href="#Hexo的部分常用指令" class="headerlink" title="Hexo的部分常用指令"></a>Hexo的部分常用指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章名&quot;	#== hexo new &quot;文章名&quot; == hexo new post &quot;文章名&quot;</span><br><span class="line">hexo p		#== hexo publish</span><br><span class="line">hexo g		#== hexo generate  生成网站静态文件到默认设置的 public 文件夹。</span><br><span class="line">hexo s		#== hexo server 启动本地服务器，用于预览主题    </span><br><span class="line">hexo d		#== hexo deploy	自动生成网站静态文件，并部署到设定的仓库。</span><br><span class="line">hexo d -g 	#== hexo deploy --generate</span><br><span class="line">hexo g -d	#== hexo generate --deploy</span><br><span class="line">hexo clean	#清除缓存文件db.json和已生成的静态文件public</span><br></pre></td></tr></table></figure>
+
+<p>有时hexo d无法成功发送到github库，使用hexo clean之后再发送有奇效。</p>
+<h2 id="Hexo的部分拓展功能"><a href="#Hexo的部分拓展功能" class="headerlink" title="Hexo的部分拓展功能"></a>Hexo的部分拓展功能</h2><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>在github上搜索hexo-theme，能搜到上千条内容。选中自己喜欢的主题并且下载到你期望写博客的文件夹。在_config.yml文件中找到theme，将初始化的主题landscape替换成你想要的即可。我的博客采用的是<a target="_blank" rel="noopener" href="https://github.com/fi3ework/hexo-theme-archer">这个模版</a>，感觉非常美观。</p>
 
     </article>
     <!-- license  -->
@@ -596,7 +606,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">Hexo的下载与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.2.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BD%E5%86%85npm%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.3.</span> <span class="toc-text">国内npm速度慢的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">Hexo的初始化与连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%93%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">Hexo的一些拓展功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">更换主题</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">Hexo的下载与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-number">1.2.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BD%E5%86%85npm%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.3.</span> <span class="toc-text">国内npm速度慢的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">Hexo的初始化与连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8Bgithub%E4%BB%93%E5%BA%93"><span class="toc-number">2.2.</span> <span class="toc-text">建立github仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E4%B8%8Egithub%E4%BB%93%E5%BA%93%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.3.</span> <span class="toc-text">hexo与github仓库的连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo%E7%9A%84%E9%83%A8%E5%88%86%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-number">2.4.</span> <span class="toc-text">Hexo的部分常用指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E7%9A%84%E9%83%A8%E5%88%86%E6%8B%93%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">Hexo的部分拓展功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">3.1.</span> <span class="toc-text">更换主题</span></a></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
