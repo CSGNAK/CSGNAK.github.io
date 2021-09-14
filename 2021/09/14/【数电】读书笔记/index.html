@@ -20,12 +20,12 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="&amp;emsp;2021年秋模拟与数字电路。">
+    <meta name="description" content="2021年秋模拟与数字电路。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【数电】读书笔记">
 <meta property="og:url" content="http://example.com/2021/09/14/%E3%80%90%E6%95%B0%E7%94%B5%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;emsp;2021年秋模拟与数字电路。">
+<meta property="og:description" content="2021年秋模拟与数字电路。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gufzdk7pxlj60b604o3yd02.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gufzdm02bjj60b604m0sl02.jpg">
@@ -52,7 +52,7 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gug0i8e693j60sc074aah02.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gug0lnhky5j60e806kdfq02.jpg">
 <meta property="article:published_time" content="2021-09-14T01:51:07.000Z">
-<meta property="article:modified_time" content="2021-09-14T07:02:29.745Z">
+<meta property="article:modified_time" content="2021-09-14T07:06:29.631Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gufzdk7pxlj60b604o3yd02.jpg">
@@ -337,7 +337,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">2.1k</span>Reading time: <span class="post-count reading-time">7 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.2k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -467,24 +467,30 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <blockquote>
-<p>&emsp;2021年秋模拟与数字电路。</p>
+<p> 2021年秋模拟与数字电路。</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h2 id="数制与代码"><a href="#数制与代码" class="headerlink" title="数制与代码"></a>数制与代码</h2><p>•数制及其转换</p>
+<h2 id="绪论"><a class="markdownIt-Anchor" href="#绪论"></a> 绪论</h2>
+<h2 id="数制与代码"><a class="markdownIt-Anchor" href="#数制与代码"></a> 数制与代码</h2>
+<p>•数制及其转换</p>
 <p>•有符号数的编码</p>
 <p>•补码加减运算</p>
 <p>•二进制代码</p>
 <p><strong>数制</strong>：所谓“数制”，指进位计数制，即用进位的方法来计数，包括<strong>计数符号</strong>（或称数码）和<strong>进位规则</strong>两个方面。</p>
 <p><strong>任意进制</strong>：R个计数符号，逢R进一</p>
-<h3 id="数制及其转换"><a href="#数制及其转换" class="headerlink" title="数制及其转换"></a>数制及其转换</h3><h4 id="不同进制之间相互转换"><a href="#不同进制之间相互转换" class="headerlink" title="不同进制之间相互转换"></a>不同进制之间相互转换</h4><p><strong>任意进制</strong> <strong>→</strong> <strong>十进制</strong>：按位权展开求和</p>
+<h3 id="数制及其转换"><a class="markdownIt-Anchor" href="#数制及其转换"></a> 数制及其转换</h3>
+<h4 id="不同进制之间相互转换"><a class="markdownIt-Anchor" href="#不同进制之间相互转换"></a> 不同进制之间相互转换</h4>
+<p><strong>任意进制</strong> <strong>→</strong> <strong>十进制</strong>：按位权展开求和</p>
 <p><strong>十进制 →</strong> <strong>任意进制</strong>：</p>
 <p>–整数部分：辗转除基取余，先得较低有效位</p>
 <p>–小数部分：辗转乘基取整，先得较高有效位</p>
 <p><strong>二、八、十六进制之间</strong>：</p>
 <p>– 二进制 <strong>→</strong> 十六 (八) 进制：以小数点为起点，按 4 (3) 位分组，不足部分补 0，每组转换为 1 位十六 (八) 进制数码</p>
 <p>– 十六 (八) 进制 <strong>→</strong> 二进制：每位十六 (八) 进制数码转换为 4(3) 位二进制数码</p>
-<h4 id="二进制算术运算"><a href="#二进制算术运算" class="headerlink" title="二进制算术运算"></a>二进制算术运算</h4><p>加、减运算与十进制数运算规则类似，不同在于进位或借位规则；乘、除运算可以用加、减和移位运算实现数据用<strong>补码</strong>表示，减法可转化为加法运算。</p>
-<h3 id="有符号数的编码"><a href="#有符号数的编码" class="headerlink" title="有符号数的编码"></a>有符号数的编码</h3><p>常用编码：原码、反码和补码。</p>
+<h4 id="二进制算术运算"><a class="markdownIt-Anchor" href="#二进制算术运算"></a> 二进制算术运算</h4>
+<p>加、减运算与十进制数运算规则类似，不同在于进位或借位规则；乘、除运算可以用加、减和移位运算实现数据用<strong>补码</strong>表示，减法可转化为加法运算。</p>
+<h3 id="有符号数的编码"><a class="markdownIt-Anchor" href="#有符号数的编码"></a> 有符号数的编码</h3>
+<p>常用编码：原码、反码和补码。</p>
 <p>– 最高 1 位表示符号：0 - 正数，1 - 负数</p>
 <p>– 余下位表示数值</p>
 <p>对于正数，三种码相同，余下位=数值位。对于负数，三种码不同：</p>
@@ -496,19 +502,22 @@ height:50vh;
 <p>–负数：– ( 补码 + 1)</p>
 <p><strong>溢出</strong>：运算的结果超出了补码的表示范围</p>
 <p><strong>溢出判别</strong>：最高位进位和次高位进位。相同，则未溢出；不相同，则溢出。</p>
-<h3 id="二进制代码"><a href="#二进制代码" class="headerlink" title="二进制代码"></a>二进制代码</h3><p>二进制数码：表示不同事物或状态。待编码的事物或状态的个数 N，与编码后二进制代码的位数 n 之间应满足：2n≥N</p>
+<h3 id="二进制代码"><a class="markdownIt-Anchor" href="#二进制代码"></a> 二进制代码</h3>
+<p>二进制数码：表示不同事物或状态。待编码的事物或状态的个数 N，与编码后二进制代码的位数 n 之间应满足：2n≥N</p>
 <p><strong>常用代码</strong>：ASCII码、BCD码、格雷码</p>
-<h4 id="ASCII码——美国信息交换标准代码"><a href="#ASCII码——美国信息交换标准代码" class="headerlink" title="ASCII码——美国信息交换标准代码"></a>ASCII码——美国信息交换标准代码</h4><p>– 7 位二进制代码, 共可表示 128 个字符, 其中</p>
+<h4 id="ascii码美国信息交换标准代码"><a class="markdownIt-Anchor" href="#ascii码美国信息交换标准代码"></a> ASCII码——美国信息交换标准代码</h4>
+<p>– 7 位二进制代码, 共可表示 128 个字符, 其中</p>
 <p>– 95 个可显示和打印字符</p>
 <p>– 33 个控制字符</p>
-<h4 id="BCD码——二-十进制码-Binary-Coded-Decimal"><a href="#BCD码——二-十进制码-Binary-Coded-Decimal" class="headerlink" title="BCD码——二-十进制码 (Binary-Coded Decimal)"></a>BCD码——二-十进制码 (Binary-Coded Decimal)</h4><p>– 用4位二进制数码，来表示一位十进制数码</p>
+<h4 id="bcd码二-十进制码-binary-coded-decimal"><a class="markdownIt-Anchor" href="#bcd码二-十进制码-binary-coded-decimal"></a> BCD码——二-十进制码 (Binary-Coded Decimal)</h4>
+<p>– 用4位二进制数码，来表示一位十进制数码</p>
 <p>– 有多种方案，不同方案得到不同的 BCD 码</p>
 <p><strong>常用BCD码</strong></p>
 <p>–有权码：8421码、5421码、2421码</p>
 <p>–无权码：余 3 码、余 3 循环码</p>
 <p>–如无特别说明，BCD 码一般指 8421 BCD 码</p>
-<h4 id="格雷码"><a href="#格雷码" class="headerlink" title="格雷码"></a>格雷码</h4><p>编码顺序依次变化时，相邻代码仅有一位不同。最小和最大之间也只有一位不同，也称循环码。</p>
-<div class="table-container">
+<h4 id="格雷码"><a class="markdownIt-Anchor" href="#格雷码"></a> 格雷码</h4>
+<p>编码顺序依次变化时，相邻代码仅有一位不同。最小和最大之间也只有一位不同，也称循环码。</p>
 <table>
 <thead>
 <tr>
@@ -587,8 +596,8 @@ height:50vh;
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="逻辑代数基础-1"><a href="#逻辑代数基础-1" class="headerlink" title="逻辑代数基础 (1)"></a>逻辑代数基础 (1)</h2><p>•基本逻辑运算</p>
+<h2 id="逻辑代数基础-1"><a class="markdownIt-Anchor" href="#逻辑代数基础-1"></a> 逻辑代数基础 (1)</h2>
+<p>•基本逻辑运算</p>
 <p>•逻辑函数及其表示方法</p>
 <p>•逻辑代数基本定律</p>
 <p>逻辑代数基本规则</p>
@@ -596,207 +605,167 @@ height:50vh;
 <p><strong>逻辑变量</strong>：只有 0、1 两种取值。0和1不代表数量大小，而是表示对立的两种逻辑状态</p>
 <p><strong>逻辑函数</strong>：描述输入/输出逻辑变量之间的关系</p>
 <p><strong>基本逻辑运算</strong>：与 、或 、非</p>
-<h3 id="基本逻辑运算"><a href="#基本逻辑运算" class="headerlink" title="基本逻辑运算"></a>基本逻辑运算</h3><h4 id="与运算"><a href="#与运算" class="headerlink" title="与运算"></a>与运算</h4><p>与逻辑，也称逻辑乘。条件全部具备，结果才发生。</p>
-<p>与逻辑表达式：$Y = A • B = A B$</p>
-<div class="table-container">
+<h3 id="基本逻辑运算"><a class="markdownIt-Anchor" href="#基本逻辑运算"></a> 基本逻辑运算</h3>
+<h4 id="与运算"><a class="markdownIt-Anchor" href="#与运算"></a> 与运算</h4>
+<p>与逻辑，也称逻辑乘。条件全部具备，结果才发生。</p>
+<p>与逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mi>A</mi><mi mathvariant="normal">•</mi><mi>B</mi><mo>=</mo><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">Y = A • B = A B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord">•</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></p>
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzdk7pxlj60b604o3yd02.jpg" alt="image-20210914111005133"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzdm02bjj60b604m0sl02.jpg" alt="image-20210914111008384"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzdk7pxlj60b604o3yd02.jpg" alt="image-20210914111005133" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzdm02bjj60b604m0sl02.jpg" alt="image-20210914111008384" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="或运算"><a href="#或运算" class="headerlink" title="或运算"></a>或运算</h4><p>或逻辑，也称逻辑加。条件之一具备，结果就发生</p>
-<p>或逻辑表达式：$Y = A + B$</p>
-<div class="table-container">
+<h4 id="或运算"><a class="markdownIt-Anchor" href="#或运算"></a> 或运算</h4>
+<p>或逻辑，也称逻辑加。条件之一具备，结果就发生</p>
+<p>或逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mi>A</mi><mo>+</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">Y = A + B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></p>
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzdza7ytj60b004kt8l02.jpg" alt="image-20210914111029470"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufze2v4btj60b204gwec02.jpg" alt="image-20210914111034736"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzdza7ytj60b004kt8l02.jpg" alt="image-20210914111029470" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufze2v4btj60b204gwec02.jpg" alt="image-20210914111034736" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="非运算"><a href="#非运算" class="headerlink" title="非运算"></a>非运算</h4><p>非逻辑，也称逻辑反。条件不具备，结果发生；条件具备，结果不发生。</p>
-<p>非逻辑表达式 $Y = \bar A$。其中，$A$ 和 $\bar A$ 分别称为原变量和反变量。</p>
-<div class="table-container">
+<h4 id="非运算"><a class="markdownIt-Anchor" href="#非运算"></a> 非运算</h4>
+<p>非逻辑，也称逻辑反。条件不具备，结果发生；条件具备，结果不发生。</p>
+<p>非逻辑表达式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mover accent="true"><mi>A</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">Y = \bar A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8201099999999999em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201099999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">A</span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.11110999999999999em;">ˉ</span></span></span></span></span></span></span></span></span>。其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>A</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8201099999999999em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201099999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">A</span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.11110999999999999em;">ˉ</span></span></span></span></span></span></span></span></span> 分别称为原变量和反变量。</p>
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzeigawdj60au03274402.jpg" alt="image-20210914111059851"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzek5onpj60aq03a0sk02.jpg" alt="image-20210914111103339"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzeigawdj60au03274402.jpg" alt="image-20210914111059851" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzek5onpj60aq03a0sk02.jpg" alt="image-20210914111103339" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="常用复合逻辑运算——与非"><a href="#常用复合逻辑运算——与非" class="headerlink" title="常用复合逻辑运算——与非"></a>常用复合逻辑运算——与非</h4><p>与非逻辑表达式：$Y = \overline{A B}$</p>
+<h4 id="常用复合逻辑运算与非"><a class="markdownIt-Anchor" href="#常用复合逻辑运算与非"></a> 常用复合逻辑运算——与非</h4>
+<p>与非逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">Y = \overline{A B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></p>
 <p>特点：全 1 得 0，有 0 得 1。常用复合逻辑运算─或非</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzj4r25zj60ce04mmx102.jpg" alt="image-20210914111526112"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzja57p5j60ca04omx202.jpg" alt="image-20210914111535485"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzj4r25zj60ce04mmx102.jpg" alt="image-20210914111526112" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzja57p5j60ca04omx202.jpg" alt="image-20210914111535485" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="常用复合逻辑运算─或非"><a href="#常用复合逻辑运算─或非" class="headerlink" title="常用复合逻辑运算─或非"></a>常用复合逻辑运算─或非</h4><p>或非逻辑表达式：$Y = \overline{A+B}$</p>
+<h4 id="常用复合逻辑运算或非"><a class="markdownIt-Anchor" href="#常用复合逻辑运算或非"></a> 常用复合逻辑运算─或非</h4>
+<p>或非逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">Y = \overline{A+B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.08333em;"><span></span></span></span></span></span></span></span></span></p>
 <p>特点：有 1 得 0，全 0 得 1。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzifyixij60b4056dfp02.jpg" alt="image-20210914111446844"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufziizqddj60b404uglh02.jpg" alt="image-20210914111451405"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzifyixij60b4056dfp02.jpg" alt="image-20210914111446844" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufziizqddj60b404uglh02.jpg" alt="image-20210914111451405" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="常用复合逻辑运算─异或"><a href="#常用复合逻辑运算─异或" class="headerlink" title="常用复合逻辑运算─异或"></a>常用复合逻辑运算─异或</h4><p>异或逻辑表达式：$Y = A\oplus B = \overline{A}B+A\overline{B}$</p>
+<h4 id="常用复合逻辑运算异或"><a class="markdownIt-Anchor" href="#常用复合逻辑运算异或"></a> 常用复合逻辑运算─异或</h4>
+<p>异或逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo>=</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mi>B</mi><mo>+</mo><mi>A</mi><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">Y = A\oplus B = \overline{A}B+A\overline{B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span></p>
 <p>特点：不同得 1 ，相同得 0。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzk6l84yj60bq04mwec02.jpg" alt="image-20210914111627289"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzk9qt5xj60c204owee02.jpg" alt="image-20210914111632649"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzk6l84yj60bq04mwec02.jpg" alt="image-20210914111627289" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzk9qt5xj60c204owee02.jpg" alt="image-20210914111632649" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="常用复合逻辑运算─同或"><a href="#常用复合逻辑运算─同或" class="headerlink" title="常用复合逻辑运算─同或"></a>常用复合逻辑运算─同或</h4><p>同或逻辑表达式：$Y=A\odot B=\overline{A\oplus B}=\overline{A}\overline{B}+AB$</p>
+<h4 id="常用复合逻辑运算同或"><a class="markdownIt-Anchor" href="#常用复合逻辑运算同或"></a> 常用复合逻辑运算─同或</h4>
+<p>同或逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mi>A</mi><mo>⊙</mo><mi>B</mi><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⊕</mo><mi>B</mi></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><mo>+</mo><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">Y=A\odot B=\overline{A\oplus B}=\overline{A}\overline{B}+AB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊙</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.08333em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></p>
 <p>特点：相同得 1， 不同得 0。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzkmjekcj60bq04mt8k02.jpg" alt="image-20210914111652800"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzl6iza4j60ca04m74702.jpg" alt="image-20210914111725188"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzkmjekcj60bq04mt8k02.jpg" alt="image-20210914111652800" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzl6iza4j60ca04m74702.jpg" alt="image-20210914111725188" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="常用复合逻辑运算─与或非"><a href="#常用复合逻辑运算─与或非" class="headerlink" title="常用复合逻辑运算─与或非"></a>常用复合逻辑运算─与或非</h4><p>与或非逻辑表达式：$Y = \overline{AB+CD}$</p>
-<div class="table-container">
+<h4 id="常用复合逻辑运算与或非"><a class="markdownIt-Anchor" href="#常用复合逻辑运算与或非"></a> 常用复合逻辑运算─与或非</h4>
+<p>与或非逻辑表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mi>B</mi><mo>+</mo><mi>C</mi><mi>D</mi></mrow><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">Y = \overline{AB+CD}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.08333em;"><span></span></span></span></span></span></span></span></span></p>
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzln2zkuj60bi0b2wej02.jpg" alt="image-20210914111751391"></th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzlp8s2wj60gy08aaa602.jpg" alt="image-20210914111754674"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzln2zkuj60bi0b2wej02.jpg" alt="image-20210914111751391" /></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzlp8s2wj60gy08aaa602.jpg" alt="image-20210914111754674" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h3 id="逻辑函数及其表示方法"><a href="#逻辑函数及其表示方法" class="headerlink" title="逻辑函数及其表示方法"></a>逻辑函数及其表示方法</h3><p>如果对应于输入逻辑变量 A、B、C、…的每一组确定值，输出逻辑变量 Y 都有唯一确定的值，则称 Y 是A、B、C、…的逻辑函数，记为 Y = <em>f</em> (A, B, C…)  简写为 Y (A, B, C…)</p>
-<h4 id="逻辑函数的表示方法"><a href="#逻辑函数的表示方法" class="headerlink" title="逻辑函数的表示方法"></a><strong>逻辑函数的表示方法</strong></h4><p>–真值表、逻辑式、逻辑图、波形图、卡诺图、硬件描述语言表示法等</p>
+<h3 id="逻辑函数及其表示方法"><a class="markdownIt-Anchor" href="#逻辑函数及其表示方法"></a> 逻辑函数及其表示方法</h3>
+<p>如果对应于输入逻辑变量 A、B、C、…的每一组确定值，输出逻辑变量 Y 都有唯一确定的值，则称 Y 是A、B、C、…的逻辑函数，记为 Y = <em>f</em> (A, B, C…)  简写为 Y (A, B, C…)</p>
+<h4 id="逻辑函数的表示方法"><a class="markdownIt-Anchor" href="#逻辑函数的表示方法"></a> <strong>逻辑函数的表示方法</strong></h4>
+<p>–真值表、逻辑式、逻辑图、波形图、卡诺图、硬件描述语言表示法等</p>
 <p>–不同的表示方法是等价的，可以相互转换</p>
 <p><strong>真值表</strong>：由逻辑变量所有取值组合及其对应函数值构成的表格</p>
 <p><strong>逻辑函数式</strong>：由逻辑变量、逻辑运算符和括号等构成的式子，也称逻辑代数式，或者逻辑表达式，简称逻辑式</p>
 <p><strong>逻辑图</strong>：由逻辑符号及其相应连线构成的电路图</p>
 <p><strong>波形图</strong>：将逻辑变量所有取值组合及其对应函数值，以高、低电平形式，按时间顺序排列构成的图形，又称时序图</p>
-<h4 id="真值表→逻辑式"><a href="#真值表→逻辑式" class="headerlink" title="真值表→逻辑式"></a><strong>真值表</strong>→<strong>逻辑式</strong></h4><p>•找出真值表中使逻辑函数为1的输入变量取值组合</p>
-<p>•每个组合写成一个乘积项，其中取值为1的输入变量写成原变量，为0的写成反变量</p>
+<h4 id="真值表逻辑式"><a class="markdownIt-Anchor" href="#真值表逻辑式"></a> <strong>真值表</strong>→<strong>逻辑式</strong></h4>
+<p>•找出真值表中使逻辑函数为1的输入变量取值组合</p>
+<p>•每个组合写成一个乘积项，其中取值为1的输入变量写成原变量，为 0 的写成反变量</p>
 <p>•将这些乘积项相加，即得逻辑函数式</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufz34el0oj60hu02g3yi02.jpg" alt="image-20210914110003382" style="zoom:50%;" /></p>
-<h4 id="逻辑式→真值表"><a href="#逻辑式→真值表" class="headerlink" title="逻辑式→真值表"></a><strong>逻辑式</strong>→<strong>真值表</strong></h4><p>方法一：将输入变量取值的每个组合逐一代入逻辑式，求出函数值，然后填真值表</p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNly1gufz34el0oj60hu02g3yi02.jpg" alt="image-20210914110003382" style="zoom:50%;" />
+<h4 id="逻辑式真值表"><a class="markdownIt-Anchor" href="#逻辑式真值表"></a> <strong>逻辑式</strong>→<strong>真值表</strong></h4>
+<p>方法一：将输入变量取值的每个组合逐一代入逻辑式，求出函数值，然后填真值表</p>
 <p>方法二：根据逻辑式中每个乘积项的含义直接填真值表</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufz41izwsj60bq02kq2u02.jpg" alt="image-20210914110056325" style="zoom:50%;" /></p>
-<h4 id="逻辑式↔逻辑图"><a href="#逻辑式↔逻辑图" class="headerlink" title="逻辑式↔逻辑图"></a><strong>逻辑式</strong>↔<strong>逻辑图</strong></h4><p><strong>逻辑式→逻辑图</strong>：用逻辑符号取代逻辑式中的运算符，并按运算优先顺序将它们连接起来</p>
-<div class="table-container">
+<img src="https://tva1.sinaimg.cn/large/008i3skNly1gufz41izwsj60bq02kq2u02.jpg" alt="image-20210914110056325" style="zoom:50%;" />
+<h4 id="逻辑式逻辑图"><a class="markdownIt-Anchor" href="#逻辑式逻辑图"></a> <strong>逻辑式</strong>↔<strong>逻辑图</strong></h4>
+<p><strong>逻辑式→逻辑图</strong>：用逻辑符号取代逻辑式中的运算符，并按运算优先顺序将它们连接起来</p>
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzobf9rmj608o022q2s02.jpg" alt="image-20210914112025381"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzobf9rmj608o022q2s02.jpg" alt="image-20210914112025381" /></th>
 <th>→</th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzofn5c7j60j008q74g02.jpg" alt="image-20210914112032019"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzofn5c7j60j008q74g02.jpg" alt="image-20210914112032019" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
 <p><strong>逻辑图→逻辑式</strong></p>
 <p>–从输入到输出逐级写出逻辑符号对应的逻辑式</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzvvz9cij60ji06swel02.jpg" alt="image-20210914112742355"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzvvz9cij60ji06swel02.jpg" alt="image-20210914112742355" /></th>
 <th>→</th>
-<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzw1jdvij60a802kq2u02.jpg" alt="image-20210914112750843"></th>
+<th><img src="https://tva1.sinaimg.cn/large/008i3skNly1gufzw1jdvij60a802kq2u02.jpg" alt="image-20210914112750843" /></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
-</div>
-<h4 id="波形图→真值表"><a href="#波形图→真值表" class="headerlink" title="波形图→真值表"></a><strong>波形图</strong>→<strong>真值表</strong></h4><p>根据所给的波形，列出各输入变量组合所对应的输出值</p>
-<h3 id="逻辑代数基本定律"><a href="#逻辑代数基本定律" class="headerlink" title="逻辑代数基本定律"></a><strong>逻辑代数基本定律</strong></h3><p>$A·0=0$，$A ·1 =A$；</p>
-<p>$A+1=1$， $A+0=A$；</p>
-<p>$A ·A=A$，$A+A=A$；</p>
-<p>$A · A=0$，$A+A=1$， $\overline{\overline{A}} = A$</p>
-<p>交换律：$A · B= B · A$； $A+B=B+A$</p>
-<p>结合律： $A(BC)=(AB)C$，$A+(B+C)=(A+B)+C$</p>
-<p>分配律： $A(B+C)=AB+AC$；$A+BC=(A+B)(A+C)$</p>
-<p>吸收律： $A + A · B= A$，$A · (A+B)=A$</p>
-<p>反演律 (摩根定理)：$A+B=A·B$，$AB=A + B$</p>
-<h3 id="逻辑代数基本规则"><a href="#逻辑代数基本规则" class="headerlink" title="逻辑代数基本规则"></a>逻辑代数基本规则</h3><h4 id="代入规则"><a href="#代入规则" class="headerlink" title="代入规则"></a>代入规则</h4><p>在任一逻辑恒等式中，若以一个逻辑表达式，代替恒等式两边所有出现的某一变量，则所得等式仍然成立，利用代入规则可以扩展基本定律的应用范围。</p>
-<h4 id="反演规则"><a href="#反演规则" class="headerlink" title="反演规则"></a>反演规则</h4><p>对于任一逻辑表达式 Y ，若将其中所有运算符、常量和变量作如下变换</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gug0i8e693j60sc074aah02.jpg" alt="image-20210914114910888"></p>
-<p> 则所得的逻辑表达式，就是原函数 Y 的反函数 Y</p>
+<h4 id="波形图真值表"><a class="markdownIt-Anchor" href="#波形图真值表"></a> <strong>波形图</strong>→<strong>真值表</strong></h4>
+<p>根据所给的波形，列出各输入变量组合所对应的输出值</p>
+<h3 id="逻辑代数基本定律"><a class="markdownIt-Anchor" href="#逻辑代数基本定律"></a> <strong>逻辑代数基本定律</strong></h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">⋅</mo><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A·0=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">⋅</mo><mn>1</mn><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A ·1 =A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>；</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A+1=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mn>0</mn><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A+0=A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>；</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">⋅</mo><mi>A</mi><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A ·A=A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>A</mi><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A+A=A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>；</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">⋅</mo><mi>A</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A · A=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>A</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A+A=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mo stretchy="true">‾</mo></mover><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">\overline{\overline{A}} = A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.0833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span><span style="top:-4.00333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span></p>
+<p>交换律：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">⋅</mo><mi>B</mi><mo>=</mo><mi>B</mi><mo separator="true">⋅</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A · B= B · A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">A</span></span></span></span>； <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>B</mi><mo>=</mo><mi>B</mi><mo>+</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A+B=B+A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span></p>
+<p>结合律： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo stretchy="false">(</mo><mi>B</mi><mi>C</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><mi>B</mi><mo stretchy="false">)</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A(BC)=(AB)C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mo stretchy="false">(</mo><mi>B</mi><mo>+</mo><mi>C</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><mo>+</mo><mi>B</mi><mo stretchy="false">)</mo><mo>+</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">A+(B+C)=(A+B)+C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span></p>
+<p>分配律： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo stretchy="false">(</mo><mi>B</mi><mo>+</mo><mi>C</mi><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi><mi>B</mi><mo>+</mo><mi>A</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">A(B+C)=AB+AC</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>B</mi><mi>C</mi><mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><mo>+</mo><mi>B</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>A</mi><mo>+</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">A+BC=(A+B)(A+C)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span></span></p>
+<p>吸收律： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>A</mi><mo separator="true">⋅</mo><mi>B</mi><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A + A · B= A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">⋅</mo><mo stretchy="false">(</mo><mi>A</mi><mo>+</mo><mi>B</mi><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A · (A+B)=A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span></p>
+<p>反演律 (摩根定理)：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>B</mi><mo>=</mo><mi>A</mi><mo separator="true">⋅</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A+B=A·B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>B</mi><mo>=</mo><mi>A</mi><mo>+</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">AB=A + B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span></p>
+<h3 id="逻辑代数基本规则"><a class="markdownIt-Anchor" href="#逻辑代数基本规则"></a> 逻辑代数基本规则</h3>
+<h4 id="代入规则"><a class="markdownIt-Anchor" href="#代入规则"></a> 代入规则</h4>
+<p>在任一逻辑恒等式中，若以一个逻辑表达式，代替恒等式两边所有出现的某一变量，则所得等式仍然成立，利用代入规则可以扩展基本定律的应用范围。</p>
+<h4 id="反演规则"><a class="markdownIt-Anchor" href="#反演规则"></a> 反演规则</h4>
+<p>对于任一逻辑表达式 Y ，若将其中所有运算符、常量和变量作如下变换</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gug0i8e693j60sc074aah02.jpg" alt="image-20210914114910888" /></p>
+<p>则所得的逻辑表达式，就是原函数 Y 的反函数 Y</p>
 <p><strong>应用反演规则求反函数</strong>：保持原函数运算次序，即先括号，然后与，最后或，必要时适当地加入括号，不属于单个变量上的非号保留不变。</p>
-<h4 id="对偶规则"><a href="#对偶规则" class="headerlink" title="对偶规则"></a>对偶规则</h4><p>对于任一逻辑表达式Y ，若将其中所有运算符和常量作如下变换：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gug0lnhky5j60e806kdfq02.jpg" alt="image-20210914115228217"></p>
+<h4 id="对偶规则"><a class="markdownIt-Anchor" href="#对偶规则"></a> 对偶规则</h4>
+<p>对于任一逻辑表达式Y ，若将其中所有运算符和常量作如下变换：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gug0lnhky5j60e806kdfq02.jpg" alt="image-20210914115228217" /></p>
 <p>则所得的逻辑表达式称为 Y 的对偶式，记作 Y′</p>
 <p>对偶规则：若两个逻辑表达式相等，则它们的对偶式也相等。利用对偶规则，从已知公式可以得到更多公式 。</p>
 
@@ -933,7 +902,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">绪论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E4%B8%8E%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">数制与代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.1.</span> <span class="toc-text">数制及其转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.1.1.</span> <span class="toc-text">不同进制之间相互转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">2.1.2.</span> <span class="toc-text">二进制算术运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81"><span class="toc-number">2.2.</span> <span class="toc-text">有符号数的编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">二进制代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASCII%E7%A0%81%E2%80%94%E2%80%94%E7%BE%8E%E5%9B%BD%E4%BF%A1%E6%81%AF%E4%BA%A4%E6%8D%A2%E6%A0%87%E5%87%86%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.1.</span> <span class="toc-text">ASCII码——美国信息交换标准代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BCD%E7%A0%81%E2%80%94%E2%80%94%E4%BA%8C-%E5%8D%81%E8%BF%9B%E5%88%B6%E7%A0%81-Binary-Coded-Decimal"><span class="toc-number">2.3.2.</span> <span class="toc-text">BCD码——二-十进制码 (Binary-Coded Decimal)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E9%9B%B7%E7%A0%81"><span class="toc-number">2.3.3.</span> <span class="toc-text">格雷码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80-1"><span class="toc-number">3.</span> <span class="toc-text">逻辑代数基础 (1)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.</span> <span class="toc-text">基本逻辑运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.1.</span> <span class="toc-text">与运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%96%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.2.</span> <span class="toc-text">或运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.3.</span> <span class="toc-text">非运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E2%80%94%E2%80%94%E4%B8%8E%E9%9D%9E"><span class="toc-number">3.1.4.</span> <span class="toc-text">常用复合逻辑运算——与非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E2%94%80%E6%88%96%E9%9D%9E"><span class="toc-number">3.1.5.</span> <span class="toc-text">常用复合逻辑运算─或非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E2%94%80%E5%BC%82%E6%88%96"><span class="toc-number">3.1.6.</span> <span class="toc-text">常用复合逻辑运算─异或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E2%94%80%E5%90%8C%E6%88%96"><span class="toc-number">3.1.7.</span> <span class="toc-text">常用复合逻辑运算─同或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E2%94%80%E4%B8%8E%E6%88%96%E9%9D%9E"><span class="toc-number">3.1.8.</span> <span class="toc-text">常用复合逻辑运算─与或非</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">逻辑函数及其表示方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">逻辑函数的表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8%E2%86%92%E9%80%BB%E8%BE%91%E5%BC%8F"><span class="toc-number">3.2.2.</span> <span class="toc-text">真值表→逻辑式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%BC%8F%E2%86%92%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">3.2.3.</span> <span class="toc-text">逻辑式→真值表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%BC%8F%E2%86%94%E9%80%BB%E8%BE%91%E5%9B%BE"><span class="toc-number">3.2.4.</span> <span class="toc-text">逻辑式↔逻辑图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E5%9B%BE%E2%86%92%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">3.2.5.</span> <span class="toc-text">波形图→真值表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E5%AE%9A%E5%BE%8B"><span class="toc-number">3.3.</span> <span class="toc-text">逻辑代数基本定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="toc-number">3.4.</span> <span class="toc-text">逻辑代数基本规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E5%85%A5%E8%A7%84%E5%88%99"><span class="toc-number">3.4.1.</span> <span class="toc-text">代入规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E8%A7%84%E5%88%99"><span class="toc-number">3.4.2.</span> <span class="toc-text">反演规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E8%A7%84%E5%88%99"><span class="toc-number">3.4.3.</span> <span class="toc-text">对偶规则</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text"> 绪论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E4%B8%8E%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text"> 数制与代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.1.</span> <span class="toc-text"> 数制及其转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 不同进制之间相互转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 二进制算术运算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81"><span class="toc-number">2.2.</span> <span class="toc-text"> 有符号数的编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text"> 二进制代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ascii%E7%A0%81%E7%BE%8E%E5%9B%BD%E4%BF%A1%E6%81%AF%E4%BA%A4%E6%8D%A2%E6%A0%87%E5%87%86%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.1.</span> <span class="toc-text"> ASCII码——美国信息交换标准代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bcd%E7%A0%81%E4%BA%8C-%E5%8D%81%E8%BF%9B%E5%88%B6%E7%A0%81-binary-coded-decimal"><span class="toc-number">2.3.2.</span> <span class="toc-text"> BCD码——二-十进制码 (Binary-Coded Decimal)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E9%9B%B7%E7%A0%81"><span class="toc-number">2.3.3.</span> <span class="toc-text"> 格雷码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80-1"><span class="toc-number">3.</span> <span class="toc-text"> 逻辑代数基础 (1)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.</span> <span class="toc-text"> 基本逻辑运算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 与运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%96%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 或运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 非运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E4%B8%8E%E9%9D%9E"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 常用复合逻辑运算——与非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E6%88%96%E9%9D%9E"><span class="toc-number">3.1.5.</span> <span class="toc-text"> 常用复合逻辑运算─或非</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96"><span class="toc-number">3.1.6.</span> <span class="toc-text"> 常用复合逻辑运算─异或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%90%8C%E6%88%96"><span class="toc-number">3.1.7.</span> <span class="toc-text"> 常用复合逻辑运算─同或</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%A4%8D%E5%90%88%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E4%B8%8E%E6%88%96%E9%9D%9E"><span class="toc-number">3.1.8.</span> <span class="toc-text"> 常用复合逻辑运算─与或非</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text"> 逻辑函数及其表示方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.1.</span> <span class="toc-text"> 逻辑函数的表示方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8%E9%80%BB%E8%BE%91%E5%BC%8F"><span class="toc-number">3.2.2.</span> <span class="toc-text"> 真值表→逻辑式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%BC%8F%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">3.2.3.</span> <span class="toc-text"> 逻辑式→真值表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%BC%8F%E9%80%BB%E8%BE%91%E5%9B%BE"><span class="toc-number">3.2.4.</span> <span class="toc-text"> 逻辑式↔逻辑图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E5%9B%BE%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">3.2.5.</span> <span class="toc-text"> 波形图→真值表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E5%AE%9A%E5%BE%8B"><span class="toc-number">3.3.</span> <span class="toc-text"> 逻辑代数基本定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99"><span class="toc-number">3.4.</span> <span class="toc-text"> 逻辑代数基本规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E5%85%A5%E8%A7%84%E5%88%99"><span class="toc-number">3.4.1.</span> <span class="toc-text"> 代入规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E8%A7%84%E5%88%99"><span class="toc-number">3.4.2.</span> <span class="toc-text"> 反演规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E8%A7%84%E5%88%99"><span class="toc-number">3.4.3.</span> <span class="toc-text"> 对偶规则</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
