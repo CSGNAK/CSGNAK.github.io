@@ -28,7 +28,7 @@
 <meta property="og:description" content="2021年秋数据结构。共5课时。  课程主页：http:&#x2F;&#x2F;222.195.93.99:82&#x2F;ds21&#x2F;#&#x2F;homepage">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-13T06:41:07.000Z">
-<meta property="article:modified_time" content="2021-09-13T12:37:45.277Z">
+<meta property="article:modified_time" content="2021-09-18T02:09:52.085Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="大二上">
@@ -322,7 +322,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">234</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">354</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -467,6 +467,9 @@ height:50vh;
 <p>&amp;L表示已经改变了函数引用的值L。</p>
 <h3 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Destroy(&amp;L): 将所有痕迹清除</span><br><span class="line">ClearList(&amp;L): 清空现有节点</span><br><span class="line">ListEmpty(L);</span><br><span class="line">ListLength(L);</span><br><span class="line">GetElem(L,i,&amp;e);</span><br><span class="line">LocateElem(L,e,compare()): 利用函数指针实现</span><br><span class="line">PriorElem(L,cur_e,&amp;pre_e);</span><br><span class="line">NextElem(L,cur_e,&amp;next_e);</span><br><span class="line">ListInsert(&amp;L,i,e);</span><br><span class="line">ListDelete(&amp;L,i,&amp;e);</span><br><span class="line">ListTraverse(L,visit): 将所有的数据遍历一次</span><br></pre></td></tr></table></figure>
+<h3 id="复杂操作集合的并"><a class="markdownIt-Anchor" href="#复杂操作集合的并"></a> 复杂操作：集合的并</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">union</span><span class="params">(List &amp;La,List Lb)</span></span>&#123;</span><br><span class="line">  La_len = <span class="built_in">ListLength</span>(La);</span><br><span class="line">  Lb_len = <span class="built_in">ListLength</span>(Lb);</span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">1</span>;i&lt;Lb_len;i++)&#123;</span><br><span class="line">    <span class="built_in">GetElem</span>(Lb,i,e);</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">LocateElem</span>(La,e,equal))</span><br><span class="line">      ListInser</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述算法的时间复杂度依赖 ADT List 定义中基本操作的执行时间 不同的数据结构影响基本操作的实现方式，导致基本操作的执行时间可能相差很大，从而导致上述算法的时间代价相差很大。</p>
 
     </article>
     <!-- license  -->
@@ -606,7 +609,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text"> 认识线性表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text"> 特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84adt"><span class="toc-number">3.</span> <span class="toc-text"> 线性表的ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text"> 基本操作</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text"> 认识线性表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text"> 特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84adt"><span class="toc-number">3.</span> <span class="toc-text"> 线性表的ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text"> 基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E6%93%8D%E4%BD%9C%E9%9B%86%E5%90%88%E7%9A%84%E5%B9%B6"><span class="toc-number">3.2.</span> <span class="toc-text"> 复杂操作：集合的并</span></a></li></ol></li></ol>
     </div>
     
     <div class="sidebar sidebar-hide">
@@ -676,9 +679,22 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 7
         </div>
         <!-- search  -->
         
@@ -694,12 +710,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2021/10/12/%E5%9B%BE%E8%AE%BA2%E2%80%94%E2%80%94%E6%A0%91/" >图论2——树</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2021/09/14/%E3%80%90%E6%95%B0%E7%94%B5%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >【数电】读书笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/%E3%80%90%E5%9B%BE%E8%AE%BA%E3%80%91%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" >【图论】阅读笔记</a>
+            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/%E5%9B%BE%E8%AE%BA1%E2%80%94%E2%80%94%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" >图论1——图的基本概念</a>
         </li>
     
     
