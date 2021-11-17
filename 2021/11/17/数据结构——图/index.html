@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="John Doe">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="John Doe">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="认识图图的各种基本术语 图(Graph)，又称为网络 (Network)，由一个节点集合和边集合构 成，记作 G &#x3D; (V, E)，其中 V 是顶点集，E 是边集  节点&#x2F;结点(node)，又称顶点(vetex) 边(edge)，又称链接(link)，联系(tie)，弧(arc)   图的 ADT 数据对象：具有相同特性的数据元素的集合，称为顶点集V。  数据关系：R &#x3D; {&lt; v,w &amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构——图">
+<meta property="og:url" content="http://example.com/2021/11/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="认识图图的各种基本术语 图(Graph)，又称为网络 (Network)，由一个节点集合和边集合构 成，记作 G &#x3D; (V, E)，其中 V 是顶点集，E 是边集  节点&#x2F;结点(node)，又称顶点(vetex) 边(edge)，又称链接(link)，联系(tie)，弧(arc)   图的 ADT 数据对象：具有相同特性的数据元素的集合，称为顶点集V。  数据关系：R &#x3D; {&lt; v,w &amp;g">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.32.23.png">
+<meta property="og:image" content="http://example.com/2021/Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.27.55.png">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008i3skNly1gwi5nlhx1mj310w0aet9q.jpg">
+<meta property="og:image" content="http://example.com/2021/Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.36.58.png">
+<meta property="article:published_time" content="2021-11-17T06:58:55.000Z">
+<meta property="article:modified_time" content="2021-11-17T06:59:59.406Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.32.23.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
+    <title>数据结构——图 · CSGNAK&#39;s Blog</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20210204" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20210204" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js?v=20210204" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/js/all.min.js"  data-auto-replace-svg="nest" ></script>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <!-- top read progress line -->
+    <div class="header-element">
+        
+        <div class="read-progress"></div>
+        
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+        <div class="header-sidebar-menu">
+        
+            
+            <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- back to home page text -->
+    <a class="home-link header-element" href=/>CSGNAK的博客</a>
+    <!-- toggle banner for post layout -->
+    
+    
+    <div class="banner">
+    
+        <div class="blog-title header-element">
+            <a href="/" >CSGNAK的博客</a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name">数据结构——图</a>
+        </div>
+    </div>
+    
+</header>
+    
+<footer class="footer-fixed">
+
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+        <div class="back-top">
+        
+            
+            <div>&#xe639;</div>
+            
+        </div>
+    </div>
+</footer>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post_background1.jpeg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            数据结构——图
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数据结构">数据结构</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.9k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/11/17</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="认识图"><a href="#认识图" class="headerlink" title="认识图"></a>认识图</h2><h4 id="图的各种基本术语"><a href="#图的各种基本术语" class="headerlink" title="图的各种基本术语"></a>图的各种基本术语</h4><ul>
+<li><p>图(Graph)，又称为网络 (Network)，由一个节点集合和边集合构 成，记作 G = (V, E)，其中 V 是顶点集，E 是边集</p>
+</li>
+<li><p>节点/结点(node)，又称顶点(vetex) 边(edge)，又称链接(link)，联系(tie)，弧(arc)</p>
+</li>
+</ul>
+<h3 id="图的-ADT"><a href="#图的-ADT" class="headerlink" title="图的 ADT"></a>图的 ADT</h3><ul>
+<li>数据对象：具有相同特性的数据元素的集合，称为顶点集V。 </li>
+<li>数据关系：R = {&lt; v,w &gt; |v,w ∈ V&amp;&amp;P(v,w)},&lt; v,w &gt;表示从v到w的一条弧,v为弧尾，w为弧头;<br> P(v, w)定义了弧&lt; v, w &gt;的意义或信息 }</li>
+</ul>
+<h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作:"></a>基本操作:</h4><p><strong>Create_Graph()：</strong> 图的创建操作，生成一个没有顶点的空图G </p>
+<p><strong>GetVex(G, v) ：</strong>求图中的顶点v的值</p>
+<p><strong>DFStraver(G,v)：</strong>从v出发对图G深度优先遍历, 每个顶点访问且只访问一次</p>
+<p><strong>BFStraver(G,v)：</strong>从v出发对图G广度优先遍历, 每个顶点访问且只访问一次</p>
+<h2 id="图的实现"><a href="#图的实现" class="headerlink" title="图的实现"></a>图的实现</h2><h3 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h3><h4 id="图存储时要考虑的问题"><a href="#图存储时要考虑的问题" class="headerlink" title="图存储时要考虑的问题"></a>图存储时要考虑的问题</h4><p>任意顶点之间可能存在联系，无法以数据元素在存储区中的物理位置来表示元素之间的关系。图中顶点的度不一样，有的可能相差很大，若按度数最大的顶点设计结构，则会浪费很多存储单元，反之按每个顶点自己的度设计不 同的结构，又会影响操作。</p>
+<h4 id="常见的图存储结构"><a href="#常见的图存储结构" class="headerlink" title="常见的图存储结构"></a>常见的图存储结构</h4><ul>
+<li>邻接矩阵/数组表示法 </li>
+<li>邻接链表</li>
+<li>十字链表</li>
+<li>邻接多重表</li>
+<li>边表</li>
+</ul>
+<h3 id="邻接矩阵-数组表示法"><a href="#邻接矩阵-数组表示法" class="headerlink" title="邻接矩阵/数组表示法"></a><strong>邻接矩阵</strong>/<strong>数组表示法</strong></h3><p><strong>顶点表 + 邻接矩阵</strong>包括：一个记录各个顶点信息的顶点表 + 一个表示各个顶点之间关系的邻接矩阵。或者更准确地说是“数组表示法”，一个一维顶点数组 + 一个二维边数组。</p>
+<h4 id="有向图和无向图的不同-1：对称性"><a href="#有向图和无向图的不同-1：对称性" class="headerlink" title="有向图和无向图的不同 1：对称性"></a><strong>有向图和无向图的不同 1：对称性</strong></h4><ul>
+<li>无向图的邻接矩阵是对称的; 有向图的邻接矩阵可能是不对称的。</li>
+</ul>
+<h4 id="有向图和无向图的不同-2：求度的差异"><a href="#有向图和无向图的不同-2：求度的差异" class="headerlink" title="有向图和无向图的不同 2：求度的差异"></a>有向图和无向图的不同 2：求度的差异</h4><ul>
+<li>在有向图中, 统计第 i 行 1 的个数可得顶点 i 的出度，统计第 i  列 1的个数可得顶点 i 的入度。</li>
+<li>在无向图中, 统计第 i 行 (列) 1 的个数可得顶点 i 的度。</li>
+</ul>
+<h4 id="邻接矩阵的实现"><a href="#邻接矩阵的实现" class="headerlink" title="邻接矩阵的实现"></a><strong>邻接矩阵的实现</strong></h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFINITY INT_MAX <span class="comment">//最大值</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_VERTEX_NUM 20 <span class="comment">//最大顶点个数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span>&#123;</span>DG,DN,UDG,UDN&#125; GraphKind; <span class="comment">//图的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ArcCell</span>&#123;</span></span><br><span class="line">	WType w; <span class="comment">// WType为边权值类型 </span></span><br><span class="line">  InfoType *info; <span class="comment">//该弧相关信息指针</span></span><br><span class="line">&#125;ArcCell,AdjMatrix[MAX_VERTEX_NUM][MAX_VERTEX_NUM];</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	VexType vexs[MAX_VERTEX_NUM]; <span class="comment">//顶点向量 </span></span><br><span class="line">  AdjMatrix adj; <span class="comment">//邻接矩阵</span></span><br><span class="line">	<span class="keyword">int</span> vexnum,arcnum; <span class="comment">//顶点数和弧数 </span></span><br><span class="line">  GraphKind kind; <span class="comment">//图的种类标志</span></span><br><span class="line">&#125; MGraph;</span><br></pre></td></tr></table></figure>
+<h4 id="图的构造"><a href="#图的构造" class="headerlink" title="图的构造"></a>图的构造</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">CreateUDN</span><span class="params">(Mgraph &amp;G)</span></span>&#123;</span><br><span class="line">	<span class="comment">//无向网的构造 </span></span><br><span class="line">	<span class="built_in">scanf</span>(&amp;G.vexnum,&amp;G.arcnum,&amp;IncInfo); </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;G.vexnum;++i) </span><br><span class="line">		<span class="built_in">scanf</span>(&amp;G.vexs[i]); </span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span> ;i&lt;G.vexnum;++i) <span class="comment">//初始化邻接矩阵</span></span><br><span class="line">     <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;G.vexnum;++j)</span><br><span class="line">       G.adj[i][j]=&#123;INFINITY,<span class="literal">NULL</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">0</span> ;k&lt;G.arcnum;++k)&#123; </span><br><span class="line">		<span class="built_in">scanf</span>(&amp;v1,&amp;v2,&amp;w); <span class="comment">//读入边依附的顶点和权值 </span></span><br><span class="line">		i=<span class="built_in">LocateVex</span>(G,v1);</span><br><span class="line">		j=<span class="built_in">LocateVex</span>(G,v2); <span class="comment">//顶点定位 </span></span><br><span class="line">		G.adj[i][j].w=w; <span class="comment">//弧&lt;v1,v2&gt;的权值</span></span><br><span class="line">		<span class="keyword">if</span> (IncInfo)</span><br><span class="line">			<span class="built_in">Input</span>(*G.adj[i][j].info); <span class="comment">//输入弧的相关信息 </span></span><br><span class="line">    G.adj[j][i]=G.adj[i][j]; <span class="comment">//置对称弧&lt;v2,v1&gt;</span></span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">return</span> OK; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="图的顶点定位"><a href="#图的顶点定位" class="headerlink" title="图的顶点定位"></a>图的顶点定位</h4><ul>
+<li>确定一个顶点在 vexs 数组中的位置 (下标) ，其过程完全等同于在顺序存储的线性表中查找一个数据元素</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LocateVex</span><span class="params">(MGraph *G , VexType *vp)</span></span>&#123; </span><br><span class="line">	intk;</span><br><span class="line">	<span class="keyword">for</span> (k=<span class="number">0</span>;k&lt; G-&gt;vexnum; k++)</span><br><span class="line">  	<span class="keyword">if</span> (G-&gt;vexs[k]==*vp)</span><br><span class="line">			<span class="keyword">return</span>(k);</span><br><span class="line">	<span class="keyword">return</span>(<span class="number">-1</span>); <span class="comment">//图中无此顶点</span></span><br><span class="line">&#125;	</span><br></pre></td></tr></table></figure>
+<h4 id="向图中增加一个顶点"><a href="#向图中增加一个顶点" class="headerlink" title="向图中增加一个顶点"></a>向图中增加一个顶点</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">AddVertex</span><span class="params">(ALGraph *G ,VexType *vp)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k, j;</span><br><span class="line">	<span class="keyword">if</span> (G-&gt;vexnum&gt;=MAX_VEX)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(“Vertex Overflow !\n”); </span><br><span class="line">		<span class="keyword">return</span>(<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">LocateVex</span>(G , vp)!=<span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(“Vertex has existed !\n”);</span><br><span class="line">		<span class="keyword">return</span>(<span class="number">-1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">	G-&gt;vertices[G-&gt;vexnum].data=*vp;</span><br><span class="line">	G-&gt;vertices[G-&gt;vexnum].degree=<span class="number">0</span>;</span><br><span class="line">	G-&gt;vertices[G-&gt;vexnum].firstarc=<span class="literal">NULL</span>;</span><br><span class="line">	k=++G-&gt;vexnum;</span><br><span class="line">	<span class="keyword">return</span>(k);</span><br><span class="line">&#125;<span class="comment">////在顶点数组vertices末尾增加一个数据元素</span></span><br></pre></td></tr></table></figure>
+<h4 id="向图中增加一条弧"><a href="#向图中增加一条弧" class="headerlink" title="向图中增加一条弧"></a>向图中增加一条弧</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">AddArc</span><span class="params">(ALGraph *G , ArcType *arc)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> k,j;</span><br><span class="line">  ArcNode*p,*q;</span><br><span class="line">  k=<span class="built_in">LocateVex</span>(G , &amp;arc-&gt;vex1) ;</span><br><span class="line">  j=<span class="built_in">LocateVex</span>(G , &amp;arc-&gt;vex2) ;</span><br><span class="line">	<span class="keyword">if</span> (k==<span class="number">-1</span>||j==<span class="number">-1</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(``弧依附的顶点不存在\n<span class="number">&#x27;&#x27;</span>); <span class="keyword">return</span>(<span class="number">-1</span>) ;</span><br><span class="line">  &#125;</span><br><span class="line">	p=(ArcNode *)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(ArcNode)) ; </span><br><span class="line">  p-&gt;adjvex=arc-&gt;vex1 ; </span><br><span class="line">  p-&gt;info=arc-&gt;info ; </span><br><span class="line">  p-&gt;nextarc=<span class="literal">NULL</span> ; <span class="comment">//边的起始表结点赋值 </span></span><br><span class="line">  q=(ArcNode *)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(ArcNode)) ; </span><br><span class="line">  q-&gt;adjvex=arc-&gt;vex2 ; </span><br><span class="line">  q-&gt;info=arc-&gt;info ; </span><br><span class="line">  q-&gt;nextarc=<span class="literal">NULL</span> ; <span class="comment">//边的末尾表结点赋值</span></span><br><span class="line">	<span class="keyword">if</span> (G-&gt;kind==UDG||G-&gt;kind==UDN) &#123; </span><br><span class="line">    q-&gt;nextarc=G-&gt;vertices[k].firstarc ; </span><br><span class="line">    G-&gt;vertices[k].firstarc=q ; </span><br><span class="line">    <span class="comment">//以上代码实现头插</span></span><br><span class="line">    p-&gt;nextarc=G-&gt;vertices[j].firstarc ; </span><br><span class="line">    G-&gt;vertices[j].firstarc=p ;</span><br><span class="line">	&#125;<span class="comment">//以上，是无向图, 用头插入法插入到两个单链表</span></span><br><span class="line">  <span class="keyword">else</span>&#123;<span class="comment">// 以下，建立有向图的邻接链表, 用头插入法</span></span><br><span class="line">		q-&gt;nextarc=G-&gt;vertices[k].firstarc ; </span><br><span class="line">		G-&gt;vertices[k].firstarc=q ; <span class="comment">//建立正邻接链表用</span></span><br><span class="line">    <span class="comment">//q-&gt;nextarc=G-&gt;vertices[j].firstarc ; </span></span><br><span class="line">    <span class="comment">//G-&gt;vertices[j].firstarc=q ;&#125;</span></span><br><span class="line">    <span class="comment">//建立逆邻接链表用</span></span><br><span class="line">	<span class="keyword">return</span>(<span class="number">1</span>); </span><br><span class="line">&#125;<span class="comment">//根据给定的弧或边所依附的顶点，修改链表。</span></span><br></pre></td></tr></table></figure>
+<h3 id="有向图的十字链表"><a href="#有向图的十字链表" class="headerlink" title="有向图的十字链表"></a>有向图的十字链表</h3><p><strong>有向图的链式存储结构：融合(拼接)邻接表和逆邻接表</strong></p>
+<ul>
+<li>data 域:存储和顶点相关的信息;</li>
+<li>指针域 firstin：指向以该顶点为弧头的第一条弧所对应的弧结点; </li>
+<li><p>指针域 firstout：指向以该顶点为弧尾的第一条弧所对应的弧结点; </p>
+</li>
+<li><p>尾域 tailvex:指示弧尾顶点在图中的位置;</p>
+</li>
+<li><p>头域 headvex:指示弧头顶点在图中的位置;</p>
+</li>
+<li><p>指针域 hlink：指向弧头相同的下一条弧; </p>
+</li>
+<li><p>指针域 tlink:指向弧尾相同的下一条弧;</p>
+</li>
+<li><p>Info 域:指向该弧的相关信息;</p>
+<p><img src="../../../Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.32.23.png" alt="截屏2021-11-17 下午2.32.23" style="zoom:25%;" /></p>
+</li>
+</ul>
+<p><strong>有向图十字链表的实现</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFINITY MAX_VAL <span class="comment">/*最大值∞*/</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_VEX 30 <span class="comment">//最大顶点数 </span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ArcNode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> tailvex, headvex; <span class="comment">//尾结点和头结点在图中的位置 </span></span><br><span class="line">  InfoType *info; <span class="comment">//与弧相关的信息, 如权值 </span></span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">ArcNode</span> *<span class="title">hlink</span>, *<span class="title">tlink</span>;</span></span><br><span class="line">&#125;ArcNode; <span class="comment">//弧结点类型定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VexNode</span>&#123;</span> VexType data; <span class="comment">// 顶点信息</span></span><br><span class="line">	ArcNode *firstin, *firstout;</span><br><span class="line">&#125;VexNode; <span class="comment">//顶点结点类型定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> vexnum;</span><br><span class="line">  VexNode xlist[MAX_VEX];</span><br><span class="line">&#125;OLGraph; <span class="comment">//图的类型定义</span></span><br></pre></td></tr></table></figure>
+<h4 id="图解十字链表"><a href="#图解十字链表" class="headerlink" title="图解十字链表"></a>图解十字链表</h4><p><img src="../../../Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.27.55.png" alt="截屏2021-11-17 下午2.27.55" style="zoom: 33%;" /></p>
+<center>
+  图：十字链表
+</center>
+
+<p>十字链表就是把邻接表和逆邻接表融合起来。（然而用的很少）</p>
+<h3 id="无向图的邻接多重表"><a href="#无向图的邻接多重表" class="headerlink" title="无向图的邻接多重表"></a>无向图的邻接多重表</h3><p>仿造有向图的十字链表 (融合邻接表和逆邻接表);将无向图的邻接 表中的重复边节点去掉</p>
+<p><strong>节点结构如下图所示，说明如下：</strong></p>
+<ul>
+<li>Data 域:存储和顶点相关的信息;</li>
+<li>指针域 firstedge:指向依附于该顶点的第一条边所对应的表结点; </li>
+<li>标志域 mark:用以标识该条边是否被访问过;</li>
+<li>ivex 和 jvex 域:分别保存该边所依附的两个顶点在图中的位置; </li>
+<li>info 域:保存该边的相关信息;</li>
+<li>指针域 ilink:指向下一条依附于顶点 ivex 的边;</li>
+<li>指针域 jlink:指向下一条依附于顶点 jvex 的边;</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gwi5nlhx1mj310w0aet9q.jpg" alt="截屏2021-11-17 下午2.36.20" style="zoom:25%;" /></p>
+<p><strong>无向图的邻接多重表的实现</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFINITY MAX_VAL <span class="comment">//最大值∞</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_VEX 30 <span class="comment">//最大顶点数</span></span></span><br><span class="line"><span class="keyword">typedef</span> emnu &#123;unvisited, visited&#125; Visitting;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">EdgeNode</span>&#123;</span></span><br><span class="line">	Visitting mark; <span class="comment">//访问标记</span></span><br><span class="line">	<span class="keyword">int</span> ivex, jvex; <span class="comment">//该边依附的两个结点在图中的位置</span></span><br><span class="line">	InfoType *info; <span class="comment">//与边相关的信息, 如权值</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">EdgeNode</span> *<span class="title">ilink</span>, *<span class="title">jlink</span>;</span></span><br><span class="line">	<span class="comment">// 分别指向依附于这两个顶点的下一条边</span></span><br><span class="line">&#125;EdgeNode; <span class="comment">//弧边结点类型定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VexNode</span>&#123;</span></span><br><span class="line">	VexType data; <span class="comment">//顶点信息</span></span><br><span class="line">	ArcNode *firstedge; <span class="comment">//指向依附于该顶点的第一条边</span></span><br><span class="line">&#125;VexNode; <span class="comment">//顶点结点类型定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> vexnum;</span><br><span class="line">	VexNode mullist[MAX_VEX];</span><br><span class="line">&#125;AMGraph;</span><br></pre></td></tr></table></figure>
+<h4 id="图解邻接多重表"><a href="#图解邻接多重表" class="headerlink" title="图解邻接多重表"></a>图解邻接多重表</h4><p><img src="../../../Library/Application%2520Support/typora-user-images/%25E6%2588%25AA%25E5%25B1%258F2021-11-17%2520%25E4%25B8%258B%25E5%258D%25882.36.58.png" alt="截屏2021-11-17 下午2.36.58" style="zoom:33%;" /></p>
+<center>
+  图：邻接多重表
+</center>
+
+
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/10/14/%E5%9B%BE%E8%AE%BA3%E2%80%94%E2%80%94%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7/" title= "图论3——图的连通性">
+                    <div class="prevTitle">图论3——图的连通性</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+     
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+</main>
+
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:xiao_yuan@mail.ustc.edu.cn" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/CSGNAK" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">认识图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%90%84%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.0.1.</span> <span class="toc-text">图的各种基本术语</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84-ADT"><span class="toc-number">1.1.</span> <span class="toc-text">图的 ADT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.1.</span> <span class="toc-text">基本操作:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">图的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">图的存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%AD%98%E5%82%A8%E6%97%B6%E8%A6%81%E8%80%83%E8%99%91%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.1.</span> <span class="toc-text">图存储时要考虑的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9B%BE%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">2.1.2.</span> <span class="toc-text">常见的图存储结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5-%E6%95%B0%E7%BB%84%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">2.2.</span> <span class="toc-text">邻接矩阵&#x2F;数组表示法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E4%B8%8D%E5%90%8C-1%EF%BC%9A%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.2.1.</span> <span class="toc-text">有向图和无向图的不同 1：对称性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E4%B8%8D%E5%90%8C-2%EF%BC%9A%E6%B1%82%E5%BA%A6%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-number">2.2.2.</span> <span class="toc-text">有向图和无向图的不同 2：求度的差异</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.2.3.</span> <span class="toc-text">邻接矩阵的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E6%9E%84%E9%80%A0"><span class="toc-number">2.2.4.</span> <span class="toc-text">图的构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E9%A1%B6%E7%82%B9%E5%AE%9A%E4%BD%8D"><span class="toc-number">2.2.5.</span> <span class="toc-text">图的顶点定位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%91%E5%9B%BE%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E9%A1%B6%E7%82%B9"><span class="toc-number">2.2.6.</span> <span class="toc-text">向图中增加一个顶点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%91%E5%9B%BE%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%B8%80%E6%9D%A1%E5%BC%A7"><span class="toc-number">2.2.7.</span> <span class="toc-text">向图中增加一条弧</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8"><span class="toc-number">2.3.</span> <span class="toc-text">有向图的十字链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8"><span class="toc-number">2.3.1.</span> <span class="toc-text">图解十字链表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8"><span class="toc-number">2.4.</span> <span class="toc-text">无向图的邻接多重表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8"><span class="toc-number">2.4.1.</span> <span class="toc-text">图解邻接多重表</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 9
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2021/11/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E5%9B%BE/" >数据结构——图</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2021/10/14/%E5%9B%BE%E8%AE%BA3%E2%80%94%E2%80%94%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7/" >图论3——图的连通性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2021/10/12/%E5%9B%BE%E8%AE%BA2%E2%80%94%E2%80%94%E6%A0%91/" >图论2——树</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2021/09/14/%E3%80%90%E6%95%B0%E7%94%B5%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >【数电】读书笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/%E5%9B%BE%E8%AE%BA1%E2%80%94%E2%80%94%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" >图论1——图的基本概念</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/%E3%80%90%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" >【计算系统概论】读书笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97%E6%B1%82%E5%92%8C/" >【数据结构】最大子序列求和</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%BA%BF%E6%80%A7%E8%A1%A8/" >【数据结构】线性表</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/%E3%80%90Hexo%E3%80%91%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E4%BD%A0%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2/" >【Hexo】如何快速建立你的Hexo博客</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
+    
+        <span class="sidebar-tag-name" data-tags="心得"><span class="iconfont-archer">&#xe606;</span>心得</span>
+    
+        <span class="sidebar-tag-name" data-tags="计算系统概论"><span class="iconfont-archer">&#xe606;</span>计算系统概论</span>
+    
+        <span class="sidebar-tag-name" data-tags="大二上"><span class="iconfont-archer">&#xe606;</span>大二上</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="数据结构"><span class="iconfont-archer">&#xe60a;</span>数据结构</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "John Doe"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
